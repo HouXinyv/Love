@@ -138,27 +138,33 @@ function showLoveU() {
 }
 
 function getHeadPoint(angle) {
-	if(angle < 1.1*Math.PI || (angle > 1.35*Math.PI && angle < 1.7*Math.PI) || angle > 1.9*Math.PI) {
+	var l1 = 1.1;
+	var l2 = 1.25;
+	var l3 = 1.35;
+	var l4 = 1.70;
+	var l5 = 1.82;
+	var l6 = 1.94;
+	if(angle < l1*Math.PI || (angle > l3*Math.PI && angle < l4*Math.PI) || angle > l6*Math.PI) {
 		drawSpeed = 0.8;
 		lastPoint = getEllipsePoint(lastPoint[0], lastPoint[1]);
 		return lastPoint;
 	}
-	else if(angle < 1.25*Math.PI) {//  /
+	else if(angle < l2*Math.PI) {//  /
 		drawSpeed = 0.2
 		lastPoint = getLinePoint(lastPoint[0], lastPoint[1], 1.5*Math.PI);
 		return lastPoint;
 	}
-	else if(angle <= 1.35*Math.PI) {//  /\
+	else if(angle <= l3*Math.PI) {//  /\
 		drawSpeed = 0.2
 		lastPoint = getLinePoint(lastPoint[0], lastPoint[1], 0.25*Math.PI);
 		return lastPoint;
 	}
-	else if(angle >= 1.7*Math.PI && angle <= 1.8*Math.PI) {
+	else if(angle >= l4*Math.PI && angle < l5*Math.PI) {
 		drawSpeed = 0.2
 		lastPoint = getLinePoint(lastPoint[0], lastPoint[1], 1.75*Math.PI);
 		return lastPoint;
 	}
-	else if(angle > 1.8*Math.PI && angle <= 1.9*Math.PI) {
+	else if(angle >= l5*Math.PI && angle <= l6*Math.PI) {
 		drawSpeed = 0.2
 		lastPoint = getLinePoint(lastPoint[0], lastPoint[1], 0.5*Math.PI);
 		return lastPoint;
@@ -202,7 +208,7 @@ function startHeadAnimation() {
 			heart.push(bloom);
 			garden.createRandomBloom(bloom[0], bloom[1]);
 		}
-		if (angle >= 2.1*Math.PI) {
+		if (angle >= 2.2*Math.PI) {
 			clearInterval(animationTimer);
 			showMessages();
 		} else {
