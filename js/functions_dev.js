@@ -18,9 +18,9 @@ $(function () {
 	lastPoint = [300+offsetX,0+offsetY+100];
 	drawSpeed = 1;
 	
-	$("#content").css("width", $loveHeart.width() + $("#code").width());
-	$("#content").css("height", Math.max($loveHeart.height(), $("#code").height()));
-	$("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2, 10));
+	$("#content").css("width", Math.max($loveHeart.width(), $("#code").width()));
+	$("#content").css("height", $loveHeart.height()+$("#code").height());
+	$("#content").css("margin-top", 10);
 	$("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
 
     // renderLoop

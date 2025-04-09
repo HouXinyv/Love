@@ -13,6 +13,7 @@ body {
 
 #loveHeart {
     /* 移除 float: left */
+	/* float: top; */
     width: 670px; /* 保持宽度 */
     height: 625px;
     margin: 0 auto; /* 居中 */
@@ -51,7 +52,7 @@ body {
     padding: 5px;
     font-size: 22px;
     margin-top: 80px;
-    margin-right: 120px;
+    margin-right: 140px;
     text-align: right;
     display: none;
 }
@@ -68,11 +69,11 @@ body {
 
 #code {
     /* 移除 float: left */
-    width: 440px; /* 保持宽度 */
+    width: 670px; /* 保持宽度 */
     height: 600px;
     color: #333;
     font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
-    font-size: 12px;
+    font-size: 22px;
     margin: 20px auto 0; /* 居中，并与 #loveHeart 留出间距 */
 }
 
