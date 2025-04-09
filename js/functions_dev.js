@@ -15,6 +15,8 @@ $(function () {
     gardenCtx = gardenCanvas.getContext("2d");
     gardenCtx.globalCompositeOperation = "lighter";
     garden = new Garden(gardenCtx, gardenCanvas);
+	lastPoint = [300+offsetX,0+offsetY+100];
+	drawSpeed = 1;
 	
 	$("#content").css("width", $loveHeart.width() + $("#code").width());
 	$("#content").css("height", Math.max($loveHeart.height(), $("#code").height()));
@@ -133,4 +135,78 @@ function adjustCodePosition() {
 
 function showLoveU() {
 	$('#loveu').fadeIn(3000);
+}
+
+function getHeadPoint(angle) {
+	if(angle < 1.1*Math.PI || (angle > 1.35*Math.PI && angle < 1.7*Math.PI) || angle > 1.9*Math.PI) {
+		drawSpeed = 0.8;
+		lastPoint = getEllipsePoint(lastPoint[0], lastPoint[1]);
+		return lastPoint;
+	}
+	else if(angle < 1.25*Math.PI) {//  /
+		drawSpeed = 0.2
+		lastPoint = getLinePoint(lastPoint[0], lastPoint[1], 1.5*Math.PI);
+		return lastPoint;
+	}
+	else if(angle <= 1.35*Math.PI) {//  /\
+		drawSpeed = 0.2
+		lastPoint = getLinePoint(lastPoint[0], lastPoint[1], 0.25*Math.PI);
+		return lastPoint;
+	}
+	else if(angle >= 1.7*Math.PI && angle <= 1.8*Math.PI) {
+		drawSpeed = 0.2
+		lastPoint = getLinePoint(lastPoint[0], lastPoint[1], 1.75*Math.PI);
+		return lastPoint;
+	}
+	else if(angle > 1.8*Math.PI && angle <= 1.9*Math.PI) {
+		drawSpeed = 0.2
+		lastPoint = getLinePoint(lastPoint[0], lastPoint[1], 0.5*Math.PI);
+		return lastPoint;
+	}
+	// var t = angle / Math.PI;
+	// var x = 19.5 * (16 * Math.pow(Math.sin(t), 3));
+	// var y = - 20 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+	// return new Array(offsetX + x, offsetY + y);
+}
+
+function getEllipsePoint(startx, starty) {
+    var a = 300; // 长轴半径
+    var b = 200; // 短轴半径
+	var t = Math.atan2((starty - offsetY - 100)*a , (startx - offsetX)*b); // 计算当前点的角度
+    var x = a * Math.cos(t+0.08);
+    var y = b * Math.sin(t+0.08);
+	lastPoint = [x+offsetX, y+offsetY+100]; // 计算椭圆上的点
+    return lastPoint; // 加上偏移量，使椭圆居中
+}
+
+function getLinePoint(startx, starty, theta) {
+    return [startx+Math.cos(theta)*10, starty+Math.sin(theta)*10]; // 加上偏移量，使椭圆居中
+}
+
+function startHeadAnimation() {
+	var interval = 50;
+	var angle = 0;
+	var heart = new Array();
+	var animationTimer = setInterval(function () {
+		var bloom = getHeadPoint(angle);
+		var draw = true;
+		for (var i = 0; i < heart.length; i++) {
+			var p = heart[i];
+			var distance = Math.sqrt(Math.pow(p[0] - bloom[0], 2) + Math.pow(p[1] - bloom[1], 2));
+			if (distance < Garden.options.bloomRadius.max * 1.3) {
+				draw = false;
+				break;
+			}
+		}
+		if (draw) {
+			heart.push(bloom);
+			garden.createRandomBloom(bloom[0], bloom[1]);
+		}
+		if (angle >= 2.1*Math.PI) {
+			clearInterval(animationTimer);
+			showMessages();
+		} else {
+			angle += 0.1*drawSpeed;
+		}
+	}, interval);
 }
