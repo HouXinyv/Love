@@ -1,115 +1,119 @@
 body {
-	margin: 0;
-	padding: 0;
-	background: #FFFFEE;
-	font-size: 12px;
-	overflow: auto;
+    margin: 0;
+    padding: 0;
+    background: #FFFFEE;
+    font-size: 12px;
+    overflow: auto;
 }
 
-#mainDiv{
-	width: 100%;
-	height: 100%;
+#mainDiv {
+    width: 100%;
+    height: 100%;
 }
 
 #loveHeart {
-	float: left;
-	width:670px;
-	height:625px;
+    /* 移除 float: left */
+    width: 670px; /* 保持宽度 */
+    height: 625px;
+    margin: 0 auto; /* 居中 */
 }
 
 #garden {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 #elapseClock {
-	text-align: center;
-	font-size: 18px;
-	margin-top: 60px;
-	margin-bottom: 10px;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 60px;
+    margin-bottom: 10px;
 }
 
 #words {
-	font-family: "sans-serif";
-	width: 500px;
-	font-size: 24px;
-	color:#666;
+    font-family: "sans-serif";
+    width: 500px;
+    font-size: 24px;
+    color: #666;
 }
 
-#messages{
-	display: none;
+#messages {
+    margin-top: 30px;
+    display: none;
 }
 
-#elapseClock .digit{
-	font-family: "digit";
-	font-size: 36px;
+#elapseClock .digit {
+    font-family: "digit";
+    font-size: 36px;
 }
 
-#loveu{
-	padding: 5px;
-	font-size: 22px;
-	margin-top: 80px;
-	margin-right: 120px;
-	text-align: right;
-	display: none;
+#loveu {
+    padding: 5px;
+    font-size: 22px;
+    margin-top: 80px;
+    margin-right: 120px;
+    text-align: right;
+    display: none;
 }
 
-#loveu .signature{
-	margin-top: 10px;
-	font-size: 20px;
-	font-style: italic;
+#loveu .signature {
+    margin-top: 10px;
+    font-size: 20px;
+    font-style: italic;
 }
 
-#clickSound{
-	display:none;
+#clickSound {
+    display: none;
 }
 
 #code {
-	float: left;
-	width: 440px;
-	height: 400px;
-	color: #333;
-	font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
-	font-size: 12px;
+    /* 移除 float: left */
+    width: 440px; /* 保持宽度 */
+    height: 600px;
+    color: #333;
+    font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
+    font-size: 12px;
+    margin: 20px auto 0; /* 居中，并与 #loveHeart 留出间距 */
 }
 
-#code .string{
-	color: #2a36ff;
+/* 以下保持不变 */
+#code .string {
+    color: #2a36ff;
 }
 
-#code .keyword{
-	color: #7f0055;
-	font-weight:bold;
+#code .keyword {
+    color: #7f0055;
+    font-weight: bold;
 }
 
-#code .placeholder{
-	margin-left:15px;
+#code .placeholder {
+    margin-left: 15px;
 }
 
-#code .space{
-	margin-left:7px;
+#code .space {
+    margin-left: 7px;
 }
 
-#code .comments{
-	color: #3f7f5f;
+#code .comments {
+    color: #3f7f5f;
 }
 
-#copyright{
-	margin-top: 10px;
-	text-align: center;
-	width:100%;
-	color:#666;
+#copyright {
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    color: #666;
 }
 
-#errorMsg{
-	width: 100%;
-	text-align: center;
-	font-size: 24px;
-	position: absolute;
-	top: 100px;
-	left:0px;
+#errorMsg {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+    top: 100px;
+    left: 0px;
 }
 
-#copyright a{
-	color:#666;
+#copyright a {
+    color: #666;
 }

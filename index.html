@@ -18,51 +18,62 @@
 <body>
 	<div id="mainDiv">
 		<div id="content">
-			<div id="code">
-				<span class="comments">/**</span><br />
-				<span class="space"/><span class="comments">* We are both Fudan SSers and programmers,</span><br />
-				<span class="space"/><span class="comments">* so I write some code to celebrate our 1st anniversary.</span><br />
-				<span class="space"/><span class="comments">*/</span><br />
-				Boy i = <span class="keyword">new</span> Boy(<span class="string">"hackerzhou"</span>);<br />
-				Girl u = <span class="keyword">new</span> Girl(<span class="string">"MaryNee"</span>);<br />
-				<span class="comments">// Nov 2, 2010, I told you I love you. </span><br />
-				i.love(u);<br />
-				<span class="comments">// Luckily, you accepted and became my girlfriend eversince.</span><br />
-				u.accepted();<br />
-				<span class="comments">// Since then, I miss u every day.</span><br />
-				i.miss(u);<br />
-				<span class="comments">// And take care of u and our love.</span><br />
-				i.takeCareOf(u);<br />
-				<span class="comments">// You say that you won't be so easy to marry me.</span><br />
-				<span class="comments">// So I keep waiting and I have confidence that you will.</span><br />
-				<span class="keyword">boolean</span> isHesitate = <span class="keyword">true</span>;<br />
-				<span class="keyword">while</span> (isHesitate) {<br />
-				<span class="placeholder"/>i.waitFor(u);<br />
-				<span class="placeholder"/><span class="comments">// I think it is an important decision</span><br />
-				<span class="placeholder"/><span class="comments">// and you should think it over.</span><br />
-				<span class="placeholder"/>isHesitate = u.thinkOver();<br />
-				}<br />
-				<span class="comments">// After a romantic wedding, we will live happily ever after.</span><br />
-				i.marry(u);<br />
-				i.liveHappilyWith(u);<br />
-			</div>
 			<div id="loveHeart">
 				<canvas id="garden"></canvas>
 				<div id="words">
 					<div id="messages">
-						<!-- I have fallen in love with you for -->
+						I have fallen in love with you for
 						<div id="elapseClock"></div>
 					</div>
 					<div id="loveu">
 						Love u forever and ever.<br/>
-						<!-- <div class="signature">- 喵喵</div> -->
+						<div class="signature">- 喵喵</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div id="copyright">
-			Inspired by <a href="http://www.openrise.com/lab/FlowerPower/">FlowerPower</a> project.<br />
-			Copyright © 2011 <a href='http://hackerzhou.me'>hackerzhou.me</a> 2009-2011
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* 你好,</span><br />
+				<span class="space"/><span class="comments">* </span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				Girl i = <span class="keyword">new</span> Girl(<span class="string">"侯喵喵"</span>);<br />
+				Dog u = <span class="keyword">new</span> Dog(<span class="string">"葛鸿达"</span>);<br />
+				<span class="comments">// 本人于2025年1月1日收养你 </span><br />
+				i.adopt(u);<br />
+				<span class="comments">// 我知道，你对此一直感到非常荣幸.</span><br />
+				u.veryHappy();<br />
+				<span class="comments">// 从那以后你天天就知道饿饿.</span><br />
+				<span class="keyword">while</span> (<span class="keyword">true</span>) {<br />
+					<span class="placeholder"/>u.say("饿饿");<br />
+					<span class="placeholder"/><span class="comments">// 不过你还是愿意冒着饿死的风险等我.</span><br />
+					<span class="placeholder"/>u.waitFor(i).toEat();<br />
+					<span class="placeholder"/>u.waitFor(i).toGoHome();<br />
+					<span class="placeholder"/>u.waitFor(i).toRun();<br />
+					<span class="placeholder"/>u.waitFor(i).toDate();<br />
+				}<br />
+				<span class="comments">// 我知道你是个好狗狗.</span><br />
+				<span class="comments">// but you need to study your English</span><br />
+				<span class="comments">// because i worry that you cant't understand my website.</span><br />
+				<span class="comments">// 所以我启动了一个线程，让你一边饿一边学英语.</span><br />
+				<span class="keyword">thread</span> dogEnglishClass {<br />
+					<span class="placeholder"/><span class="comments">// 你每天花一个小时学单词.</span><br />
+					<span class="placeholder"/>u.studyEnglish(hours=1, "words");<br />
+					<span class="placeholder"/><span class="comments">// 然后试着读我的网站.</span><br />
+					<span class="placeholder"/>u.read(i.website).slowly();<br />
+					<span class="placeholder"/><span class="comments">// 如果看不懂就汪汪叫.</span><br />
+					<span class="placeholder"/><span class="keyword">if</span> (!u.understand()) {<br />
+						<span class="placeholder"/><span class="placeholder"/>u.bark("汪汪");<br />
+					<span class="placeholder"/>} <span class="keyword">else</span> {<br />
+						<span class="placeholder"/><span class="placeholder"/>u.wagTail("开心");<br />
+					<span class="placeholder"/>}<br />
+					<span class="placeholder"/><span class="comments">// 学完后你会用英语说“饿饿”.</span><br />
+					<span class="placeholder"/>u.say("I am hungry");<br />
+					<span class="placeholder"/><span class="comments">// 我很欣慰地看着你进步.</span><br />
+					<span class="placeholder"/>i.smileAt(u);<br />
+				}<br />
+				<span class="comments">// 线程跑起来了，狗狗的英语迟早会变好！</span><br />
+			</div>
+
 		</div>
 	</div>
 	<script type="text/javascript">
